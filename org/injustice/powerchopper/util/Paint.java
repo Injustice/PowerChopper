@@ -123,8 +123,10 @@ public class Paint {
                             percBar(false, 10, 315, 178, 13, getPercentToNextLevel(Skills.FIREMAKING), green, blue, stroke1, g);
                             g.setColor(Color.BLACK);
                             g.drawString("" + getPercentToNextLevel(Skills.FIREMAKING) + "% TNL ", 78, 325);
-                            if (doAntiban)
+                            if (doAntiban) {
                                 g.drawString("Antibans: " + antibanCount, loc.x + 90, loc.y + 60);
+                                g.setColor(Color.GREEN);
+                            }
                         }
                     }
 

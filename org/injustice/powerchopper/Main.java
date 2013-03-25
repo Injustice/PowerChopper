@@ -27,9 +27,9 @@ import java.util.List;
 import static org.injustice.powerchopper.util.Utilities.savePaint;
 import static org.injustice.powerchopper.util.Variables.*;
 
-@Manifest(authors = {"Bartsome/Injustice"}, name = "Injustice's Powerchopper", description = "Powerchops all trees", version = this.version)
+@Manifest(authors = {"Bartsome/Injustice"}, name = "Injustice's Powerchopper", description = "Powerchops all trees", version = Main.version)
 public class Main extends ActiveScript implements PaintListener, MessageListener, MouseListener {
-    final double version = 0.3;
+    static final double version = 0.3;
 
     private final List<Node> jobsCollection = Collections
             .synchronizedList(new ArrayList<Node>());
@@ -100,6 +100,7 @@ public class Main extends ActiveScript implements PaintListener, MessageListener
             }
             if (Failsafe.run()) {
                 status = "Failsafe, shutdown";
+                onStop();
                 System.out.println("Failsafe shutdown");
                 Game.logout(true);
                 this.shutdown();
